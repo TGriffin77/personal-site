@@ -1,0 +1,53 @@
+import { NavLink, Link } from 'react-router-dom'
+
+function Nav() {
+  return (
+    <nav className="navbar rounded-box shadow-base-300/20 shadow-sm">
+      <div className="w-full md:flex md:items-center md:gap-2">
+        <div className="flex items-center justify-between">
+          <div className="navbar-start items-center justify-between max-md:w-full grow">
+            <Link
+              className="link text-base-content link-neutral text-xl font-bold no-underline"
+              to=""
+            >
+              Thomas Griffin
+            </Link>
+            <div className="md:hidden">
+              <button
+                type="button"
+                className="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square"
+                data-collapse="#default-navbar-collapse"
+                aria-controls="default-navbar-collapse"
+                aria-label="Toggle navigation"
+              >
+                <span className="icon-[tabler--menu-2] collapse-open:hidden size-4"></span>
+                <span className="icon-[tabler--x] collapse-open:block hidden size-4"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          id="default-navbar-collapse"
+          className="md:navbar-end collapse hidden grow overflow-hidden transition-[height] duration-300 max-md:w-full"
+        >
+          <ul className="menu md:menu-horizontal gap-2 p-0 text-base max-md:mt-2">
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/projects">Projects</NavLink>
+            </li>
+            <li>
+              <NavLink to="/blog">Blog</NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default Nav;
