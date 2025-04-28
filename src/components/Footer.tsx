@@ -5,13 +5,13 @@ function Footer() {
     <footer className="footer footer-center bg-base-200/60 rounded-sm p-6">
       <nav className="grid grid-flow-col gap-4 text-base-content">
         <Link to="/" className="link link-hover">
-          Home
+          home
         </Link>
         <Link to="/projects" className="link link-hover">
-          Projects
+          projects
         </Link>
         <Link to="/blog" className="link link-hover">
-          Blog
+          blog
         </Link>
       </nav>
       <nav>

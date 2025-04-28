@@ -5,4 +5,27 @@
 }
 @import "flyonui/variants.css";
 @source "./node_modules/flyonui/flyonui.js";
-@plugin "@iconify/tailwind4"
+@plugin "@iconify/tailwind4";
+
+
+@font-face{
+    font-family: 'DejaVuSansMono';
+    src: url('./assets/fonts/DejaVuSansMono.ttf') format('truetype');
+         font-weight: 400;
+         font-style: normal;
+}
+
+@font-face{
+    font-family: 'DejaVuSansMono';
+    src: url('./assets/fonts/DejaVuSansMono-Bold.ttf') format('truetype');
+         font-weight: 700;
+         font-style: normal;
+}
+
+@layer base {
+    html {
+        font-family: 'DejaVuSansMono';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

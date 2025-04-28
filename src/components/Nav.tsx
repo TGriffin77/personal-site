@@ -32,13 +32,13 @@ function Nav() {
           >
             <ul className="menu md:menu-horizontal gap-2 p-0 text-base max-md:mt-2">
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/">home</NavLink>
               </li>
               <li>
-                <NavLink to="/projects">Projects</NavLink>
+                <NavLink to="/projects">projects</NavLink>
               </li>
               <li>
-                <NavLink to="/blog">Blog</NavLink>
+                <NavLink to="/blog">blog</NavLink>
               </li>
               <li>
                 <Link
