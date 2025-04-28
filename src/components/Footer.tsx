@@ -7,9 +7,6 @@ function Footer() {
         <Link to="/" className="link link-hover">
           Home
         </Link>
-        <Link to="/about" className="link link-hover">
-          About
-        </Link>
         <Link to="/projects" className="link link-hover">
           Projects
         </Link>
@@ -19,17 +16,17 @@ function Footer() {
       </nav>
       <nav>
         <div className="flex gap-4">
-          <Link to="https://github.com/TGriffin77" target="_blank" className="link link-animated" aria-label="GitHub Link">
-            <span className="icon-[tabler--brand-github] size-6"></span>
+          <Link to="https://github.com/TGriffin77" target="_blank" className="group/github link link-animated" aria-label="GitHub Link">
+            <span className="icon-[tabler--brand-github] size-6 group-hover/github:bg-white"></span>
           </Link>
-          <Link to="https://www.linkedin.com/in/thomasgriffinx/" target="_blank"  className="link link-animated" aria-label="Linkedin Link">
-            <span className="icon-[tabler--brand-linkedin] size-6"></span>
+          <Link to="https://www.linkedin.com/in/thomasgriffinx/" target="_blank"  className="group/linkedin link link-animated" aria-label="Linkedin Link">
+            <span className="icon-[tabler--brand-linkedin] size-6 group-hover/linkedin:bg-info"></span>
           </Link>
-          <Link to="https://x.com/thomasgriffinx" target="_blank" className="link link-animated" aria-label="X Link">
-            <span className="icon-[tabler--brand-x] size-6"></span>
+          <Link to="https://x.com/thomasgriffinx" target="_blank" className="group/x link link-animated" aria-label="X Link">
+            <span className="icon-[tabler--brand-x] size-6 group-hover/x:bg-white "></span>
           </Link>
-          <Link to="https://www.youtube.com/@thomasgriffinx" target="_blank" className="link link-animated" aria-label="X Link">
-            <span className="icon-[tabler--brand-youtube] size-6"></span>
+          <Link to="https://www.youtube.com/@thomasgriffinx" target="_blank" className="group/youtube link link-animated" aria-label="X Link">
+            <span className="icon-[tabler--brand-youtube] size-6 group-hover/youtube:bg-warning"></span>
           </Link>
         </div>
       </nav>
