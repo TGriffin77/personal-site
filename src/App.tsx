@@ -2,6 +2,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 
 import "./App.css";
+import { Observer } from 'tailwindcss-intersect';
+
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import Blog from "./pages/blog";
@@ -36,6 +38,8 @@ function App() {
         window.HSStaticMethods.autoInit();
       }
     }, 100);
+
+    Observer.restart();
   }, [location.pathname]);
 
   return (
