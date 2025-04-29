@@ -58,6 +58,7 @@ function App() {
 
         <Footer />
       </ObserverProvider>
+      
     </>
   );
 }

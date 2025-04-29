@@ -33,7 +33,7 @@ function Home() {
           </p>
           <p className="my-4">
             Currently, Thomas Griffin spends his spare time on developing
-            various freelance projects.
+            various freelance and self-made projects.
           </p>
           <p className="my-4">
             Key technologies: C++, Python, Javascript, React, Next.js, SQL, Bash
@@ -46,7 +46,7 @@ function Home() {
           <div className="text-2xl md:text-3xl font-bold text-primary">
             Featured Projects
           </div>
-          <div className="w-full py-8 flex flex-row items-center justify-between">
+          <div className="w-full py-8 flex flex-col md:flex-row items-start md:items-center justify-center md:justify-between">
             <Card
               image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain"
               alt="penguin"
@@ -66,12 +66,15 @@ function Home() {
               description="couple of penguins!!"
             />
           </div>
-          <button className="btn btn-primary">More here!</button>
+          <div>
+            <button className="btn btn-primary mx-4">More here!</button>
+            <button className="btn btn-secondary btn-soft mx-4">View Resume</button>
+          </div>
         </div>
       </div>
       {/* Experience */}
       <div className="bg-radial from-primary to-base to-90% h-144">
-        <div className="">
+        <div className="max-w-screen-xl mx-auto px-4 py-8 flex flex-col items-center justify-between">
           <div>Experience</div>
           <div>
             <p>Experience blah blah blah.</p>
@@ -82,7 +85,7 @@ function Home() {
       {/* <div className="bg-base-200 h-144"></div> */}
       {/* Contact */}
       <div className="bg-base h-144">
-        <div>
+        <div className="max-w-screen-xl mx-auto px-4 py-8 flex flex-col items-center justify-between">
           <div>Contact</div>
           <div>
             <p>Anything you wish to contact me for.</p>
