@@ -20,7 +20,7 @@ function Card(props: CardProps) {
           {props.description}
         </p>
         <div className="card-actions">
-          <button className="btn btn-primary">Check it out!</button>
+          <button className="btn btn-primary">check it out!</button>
         </div>
       </div>
     </div>
