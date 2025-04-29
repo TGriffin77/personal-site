@@ -22,7 +22,22 @@ function Home() {
           alt="mask image"
         />
         <div className="m-4">
-          <p></p>
+          <p className="my-4">
+            Thomas Griffin is currently attending University of Central Florida
+            (UCF) as a <b>Computer Science</b> undergraduate student.
+          </p>
+          <p className="my-4">
+            He is actively pursing interests in{" "}
+            <b>Machine Learning and Artificial Intelligence</b>, alongside
+            practical experience in <b>Full-stack Web Development</b>.
+          </p>
+          <p className="my-4">
+            Currently, Thomas Griffin spends his spare time on developing
+            various freelance projects.
+          </p>
+          <p className="my-4">
+            Key technologies: C++, Python, Javascript, React, Next.js, SQL, Bash
+          </p>
         </div>
       </div>
       {/* Projects */}
@@ -32,19 +47,49 @@ function Home() {
             Featured Projects
           </div>
           <div className="w-full py-8 flex flex-row items-center justify-between">
-            <Card image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain" alt="penguin" title="penguin1" description="couple of penguins!!" delay={'0'} />
-            <Card image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain" alt="penguin" title="penguin2" description="couple of penguins!!" delay={'500'}/>
-            <Card image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain" alt="penguin" title="penguin3" description="couple of penguins!!" delay={'1000'}/>
+            <Card
+              image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain"
+              alt="penguin"
+              title="penguin1"
+              description="couple of penguins!!"
+            />
+            <Card
+              image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain"
+              alt="penguin"
+              title="penguin2"
+              description="couple of penguins!!"
+            />
+            <Card
+              image="https://th.bing.com/th/id/OIP.91YpsHTO2xWJa1CyMnPH6QHaFj?rs=1&pid=ImgDetMain"
+              alt="penguin"
+              title="penguin3"
+              description="couple of penguins!!"
+            />
           </div>
           <button className="btn btn-primary">More here!</button>
         </div>
       </div>
       {/* Experience */}
-      <div className="bg-radial from-primary to-base to-90% h-144"></div>
+      <div className="bg-radial from-primary to-base to-90% h-144">
+        <div className="">
+          <div>Experience</div>
+          <div>
+            <p>Experience blah blah blah.</p>
+          </div>
+        </div>
+      </div>
       {/* Recent Blog */}
-      <div className="bg-base-200 h-144"></div>
+      {/* <div className="bg-base-200 h-144"></div> */}
       {/* Contact */}
-      <div className="bg-base h-144"></div>
+      <div className="bg-base h-144">
+        <div>
+          <div>Contact</div>
+          <div>
+            <p>Anything you wish to contact me for.</p>
+          </div>
+          <button className="btn btn-primary">Contact</button>
+        </div>
+      </div>
     </div>
   );
 }

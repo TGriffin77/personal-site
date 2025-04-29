@@ -3,12 +3,11 @@ interface CardProps{
   alt: string;
   title: string;
   description: string;
-  delay: string;
 }
 
 function Card(props: CardProps) {
   return (
-    <div className={`card sm:max-w-sm intersect:motion-delay-[${props.delay}ms] intersect:motion-preset-expand motion-duration-[1500ms]  intersect-half `}>
+    <div className='card sm:max-w-sm intersect:motion-opacity-in-0 intersect:motion-scale-in-0 intersect:motion-preset-focus motion-duration-[1500ms] motion-delay-100 intersect-half intersect-once' no-intersect>
       <figure>
         <img
           src={props.image}

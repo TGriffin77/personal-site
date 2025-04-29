@@ -1,8 +1,8 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 import "./App.css";
-import { Observer } from 'tailwindcss-intersect';
+import ObserverProvider from "./components/ObserverProvider";
 
 import Home from "./pages/home";
 import Projects from "./pages/projects";
@@ -38,23 +38,26 @@ function App() {
         window.HSStaticMethods.autoInit();
       }
     }, 100);
-
-    Observer.restart();
   }, [location.pathname]);
 
   return (
     <>
-      <Nav />
+      <ObserverProvider>
+        <Nav />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<p className="h-screen text-4xl">404 Page not found.</p>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route
+            path="*"
+            element={<p className="h-screen text-4xl">404 Page not found.</p>}
+          />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </ObserverProvider>
     </>
   );
 }
