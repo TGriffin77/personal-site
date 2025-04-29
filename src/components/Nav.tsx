@@ -41,6 +41,9 @@ function Nav() {
                 <NavLink to="/blog">blog</NavLink>
               </li>
               <li>
+                <NavLink to="/contact">contact</NavLink>
+              </li>
+              <li>
                 <Link
                   to="https://github.com/TGriffin77"
                   target="_blank"

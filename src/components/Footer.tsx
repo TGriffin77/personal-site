@@ -13,6 +13,9 @@ function Footer() {
         <Link to="/blog" className="link link-hover">
           blog
         </Link>
+        <Link to="/contact" className="link link-hover">
+          contact
+        </Link>
       </nav>
       <nav>
         <div className="flex gap-4">
@@ -30,9 +33,7 @@ function Footer() {
           </Link>
         </div>
       </nav>
-      <aside>
-        <p>Copyright © 2024 - All right reserved by Thomas Griffin</p>
-      </aside>
+
     </footer>
   );
 }

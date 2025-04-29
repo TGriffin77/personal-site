@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import Blog from "./pages/blog";
+import Contact from "./pages/contact";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -45,7 +46,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="*" element={<p>404</p>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<p className="h-screen text-4xl">404 Page not found.</p>} />
       </Routes>
 
       <Footer />
