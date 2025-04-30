@@ -15,7 +15,7 @@ function Nav() {
               <div className="md:hidden">
                 <button
                   type="button"
-                  className="collapse-toggle btn btn-outline btn-secondary btn-sm btn-square"
+                  className="collapse-toggle btn btn-outline btn-primary btn-sm btn-square"
                   data-collapse="#sticky-navbar-collapse"
                   aria-controls="sticky-navbar-collapse"
                   aria-label="Toggle navigation"
