@@ -1,16 +1,16 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 
 import "./App.css";
 import ObserverProvider from "./components/ObserverProvider";
 
-import Home from "./pages/home";
-import Projects from "./pages/projects";
-import Blog from "./pages/blog";
-import Contact from "./pages/contact";
-
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+
+const Home = lazy(() => import("./pages/home"));
+const Projects = lazy(() => import("./pages/projects"));
+const Blog = lazy(() => import("./pages/blog"));
+const Contact = lazy(() => import("./pages/contact"));
 
 // #00CEB3 color for secondary components
 
@@ -44,21 +44,20 @@ function App() {
     <>
       <ObserverProvider>
         <Nav />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route
-            path="*"
-            element={<p className="h-screen text-4xl">404 Page not found.</p>}
-          />
-        </Routes>
-
+        <Suspense fallback={<div className="h-screen">loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route
+              path="*"
+              element={<p className="h-screen text-4xl">404 Page not found.</p>}
+            />
+          </Routes>
+        </Suspense>
         <Footer />
       </ObserverProvider>
-      
     </>
   );
 }

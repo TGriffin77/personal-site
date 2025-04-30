@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
 import Card from "../components/Card";
-import pfp from "../assets/pfp.jpg";
+import pfp from "../assets/pfp.webp";
 
 function Home() {
   return (
