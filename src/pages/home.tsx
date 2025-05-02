@@ -6,13 +6,13 @@ import pfp from "../assets/pfp.webp";
 
 function Home() {
   return (
-    <div>
+    <>
       {/* Hero */}
       <div className="bg-gradient-to-tr from-base from-50% to-primary">
         <div className="h-screen max-w-screen-xl -mt-[60px] mx-auto px-4 flex items-center justify-between">
           <div className="flex flex-col">
             <div className="text-6xl font-bold">
-              <p>Thomas Griffin</p>
+              <h1>Thomas Griffin</h1>
             </div>
             <p className="text-lg md:text-2xl w-full">
               {"> "}
@@ -120,7 +120,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
