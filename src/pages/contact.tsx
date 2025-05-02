@@ -19,11 +19,22 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    console.log("form submited:", formData);
-    alert("sent!");
+    await fetch('/api/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        email: formData.email,
+        message: formData.message
+      })
+    });
+    console.log('submitted')
     setFormData({ first_name: "", last_name: "", email: "", message: "" });
   };
 
@@ -70,7 +81,7 @@ function Contact() {
           <label>
             <span>your email address</span>
             <input
-              type="text"
+              type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
