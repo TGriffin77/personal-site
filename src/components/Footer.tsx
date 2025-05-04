@@ -7,8 +7,8 @@ function Footer() {
         <Link to="/" className="link link-hover">
           home
         </Link>
-        <Link to="/projects" className="link link-hover">
-          projects
+        <Link to="/portfolio" className="link link-hover">
+          portfolio
         </Link>
         <Link to="/blog" className="link link-hover">
           blog

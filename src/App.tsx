@@ -8,7 +8,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 const Home = lazy(() => import("./pages/home"));
-const Projects = lazy(() => import("./pages/projects"));
+const Portfolio = lazy(() => import("./pages/portfolio"));
 const Blog = lazy(() => import("./pages/blog"));
 const Contact = lazy(() => import("./pages/contact"));
 
@@ -47,7 +47,7 @@ function App() {
         <Suspense fallback={<div className="h-screen">loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route
