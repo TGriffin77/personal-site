@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, Suspense, lazy } from "react";
 
 import "./App.css";
@@ -20,14 +20,9 @@ async function loadFlyonUI() {
 }
 
 function App() {
-  const navigate = useNavigate();
   const location = useLocation();
   const state = location.state;
   const backgroundLocation = state?.background;
-
-  const openModal = (slug: string) => {
-    navigate(`/portfolio/${slug}`, { state: { background: location } });
-  };
 
   useEffect(() => {
     const initFlyonUI = async () => {
@@ -52,7 +47,7 @@ function App() {
     <>
       <ObserverProvider>
         <Nav />
-        <button onClick={() => openModal("test")}>about click</button>
+
         <Suspense fallback={<div className="h-screen">loading...</div>}>
           <Routes location={backgroundLocation || location}>
             <Route path="/" element={<Home />} />
