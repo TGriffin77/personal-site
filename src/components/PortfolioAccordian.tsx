@@ -1,4 +1,13 @@
+import { useLocation, useNavigate } from "react-router-dom";
+
 export default function PortfolioAccordian() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const openModal = (slug: string) => {
+    navigate(`/portfolio/${slug}`, { state: { background: location } });
+  }
+
   return (
     <div
       className="accordion divide-primary/100 divide-y"
@@ -11,8 +20,8 @@ export default function PortfolioAccordian() {
           aria-expanded="true"
         >
           <span className="inline-flex items-center gap-x-4">
-            <span className="icon-[tabler--code] text-base-content size-6"></span>
-            Web Development
+            <span className="icon-[tabler--heart-rate-monitor] text-base-content size-6"></span>
+            Software Projects
           </span>
           <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
         </button>
@@ -26,6 +35,7 @@ export default function PortfolioAccordian() {
             <p className="text-base-content/80 font-normal">
               Nothing here yet!
             </p>
+            <button onClick={() => openModal('test')}>THIS ISA BUTTON</button>
           </div>
         </div>
       </div>
@@ -36,8 +46,8 @@ export default function PortfolioAccordian() {
           aria-expanded="false"
         >
           <span className="inline-flex items-center gap-x-4">
-            <span className="icon-[tabler--heart-rate-monitor] text-base-content size-6"></span>
-            Computer Science Projects
+            <span className="icon-[tabler--code] text-base-content size-6"></span>
+            Web Development
           </span>
           <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
         </button>
