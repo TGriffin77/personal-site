@@ -6,6 +6,7 @@ import ObserverProvider from "./components/ObserverProvider";
 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ModalRoute from "./components/Modal";
 
 const Home = lazy(() => import("./pages/home"));
 const Portfolio = lazy(() => import("./pages/portfolio"));
@@ -20,6 +21,8 @@ async function loadFlyonUI() {
 
 function App() {
   const location = useLocation();
+  const state = location.state;
+  const backgroundLocation = state?.background;
 
   useEffect(() => {
     const initFlyonUI = async () => {
@@ -44,16 +47,20 @@ function App() {
     <>
       <ObserverProvider>
         <Nav />
+
         <Suspense fallback={<div className="h-screen">loading...</div>}>
-          <Routes>
+          <Routes location={backgroundLocation || location}>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
             <Route
               path="*"
-              element={<p className="h-screen text-4xl">404 Page not found.</p>}
+              element={<p className="h-screen text-4xl"></p>}
             />
+          </Routes>
+          <Routes>
+            <Route path="/portfolio/:slug" element={<ModalRoute />} />
           </Routes>
         </Suspense>
         <Footer />
