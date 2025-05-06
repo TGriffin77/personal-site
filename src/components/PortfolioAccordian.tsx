@@ -1,12 +1,36 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import Card from "./Card";
+import { useEffect } from "react";
 
-export default function PortfolioAccordian() {
+interface PortfolioItems {
+  slug: string;
+  description: string;
+  image: string;
+  type: string;
+}
+
+interface PortfolioAccordianProps {
+  content: PortfolioItems[];
+}
+
+export default function PortfolioAccordian({
+  content,
+}: PortfolioAccordianProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
   const openModal = (slug: string) => {
     navigate(`/portfolio/${slug}`, { state: { background: location } });
-  }
+  };
+
+  const software = content.filter((item) => item.type === "software");
+  const web = content.filter((item) => item.type === "web");
+  const photography = content.filter((item) => item.type === "photography");
+
+  // makes it so that the accordian has functionality upon reload or after loading
+  useEffect(() => {
+    window.HSStaticMethods.autoInit("accordion");
+  });
 
   return (
     <div
@@ -32,10 +56,24 @@ export default function PortfolioAccordian() {
           role="region"
         >
           <div className="px-5 pb-4">
-            <p className="text-base-content/80 font-normal">
-              Nothing here yet!
-            </p>
-            <button onClick={() => openModal('test')}>THIS ISA BUTTON</button>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-4">
+              {software[0] ? (
+                software.map((item) => (
+                  <div className="grow max-sm:w-full">
+                    <Card
+                      title={item.slug}
+                      description={item.description}
+                      onOpen={() => openModal(item.slug)}
+                      image={item.image}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p className="text-base-content/80 font-normal">
+                  Nothing here yet!
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -58,9 +96,24 @@ export default function PortfolioAccordian() {
           role="region"
         >
           <div className="px-5 pb-4">
-            <p className="text-base-content/80 font-normal">
-              Nothing here yet!
-            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-4">
+              {web[0] ? (
+                web.map((item) => (
+                  <div className="grow max-sm:w-full">
+                    <Card
+                      title={item.slug}
+                      description={item.description}
+                      onOpen={() => openModal(item.slug)}
+                      image={item.image}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p className="text-base-content/80 font-normal">
+                  Nothing here yet!
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -83,9 +136,24 @@ export default function PortfolioAccordian() {
           role="region"
         >
           <div className="px-5 pb-4">
-            <p className="text-base-content/80 font-normal">
-              Nothing here yet!
-            </p>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-between gap-4">
+              {photography[0] ? (
+                photography.map((item) => (
+                  <div className="grow max-sm:w-full">
+                    <Card
+                      title={item.slug}
+                      description={item.description}
+                      onOpen={() => openModal(item.slug)}
+                      image={item.image}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p className="text-base-content/80 font-normal">
+                  Nothing here yet!
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

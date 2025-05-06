@@ -59,7 +59,7 @@ const Modal = ({
             <img
               src={image}
               alt={slug.toUpperCase()}
-              className="mx-auto h-16"
+              className="mx-auto h-64"
             />
           )}
           <p>{content}</p>
@@ -161,14 +161,13 @@ export default function ModalRoute() {
         const res = await fetch(`/api/portfolio-content?slug=${slug}`);
 
         // disable in developer mode !!!
-        // if (!res.ok) throw new Error("Not found");
+        // if (!res.ok) throw new Error("Page not found");
 
         const json = await res.json();
         setData(json);
       } catch (err) {
         console.error("Error loading modal data:", err);
         setError("Could not load modal content");
-        setLoading(false);
       } finally {
         setLoading(false);
       }
