@@ -41,7 +41,7 @@ function Contact() {
   return (
     <>
     <div className="h-full md:h-svh bg-gradient-to-b from-base via-accent to-base">
-      <div className="h-full md:h-svh max-w-screen-sm mx-auto my-16 px-4 flex flex-col gap-8">
+      <div className="h-full md:h-svh max-w-screen-sm mx-auto my-8 px-4 flex flex-col gap-8">
         <p className="text-3xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-black w-fit">Contact</p>
         <div className="flex flex-col gap-6">
           <p className="">

@@ -25,7 +25,7 @@ export default async function handler(req, res) {
   }
 
   if (!data[0]) {
-    return res.status(404).json({ error: "not found" });
+    return res.status(404).json({ error: "data doesn't exist" });
   }
 
   return res.status(200).json(data[0]);
