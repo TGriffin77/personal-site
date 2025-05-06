@@ -40,7 +40,7 @@ const Modal = ({
             aria-label="Close"
             data-overlay="#extra-large-modal"
             onClick={onClose}
-          >
+          >components
             <span className="icon-[tabler--x] size-4"></span>
           </button>
         </div>
