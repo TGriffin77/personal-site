@@ -19,6 +19,8 @@ function Portfolio() {
       try {
         const res = await fetch("/api/portfolio");
 
+        if (!res.ok) throw new Error("Portfolio items not found!");
+
         const json = await res.json();
         setData(json);
       } catch (err) {
@@ -30,7 +32,7 @@ function Portfolio() {
     fetchData()
   }, []);
 
-  if (loading) return <div>LOADING</div>;
+  if (loading) return <div className="h-screen">LOADING</div>;
   if (error) return <div>ERROR</div>;
   return (
     <>

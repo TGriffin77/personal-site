@@ -160,8 +160,7 @@ export default function ModalRoute() {
       try {
         const res = await fetch(`/api/portfolio-content?slug=${slug}`);
 
-        // disable in developer mode !!!
-        // if (!res.ok) throw new Error("Page not found");
+        if (!res.ok) throw new Error("Page not found");
 
         const json = await res.json();
         setData(json);

@@ -12,6 +12,10 @@ export default async function handler(req, res) {
     return res.status(404).json({ error: "Not found" });
   }
 
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
 
   // fetch data with slug from the database

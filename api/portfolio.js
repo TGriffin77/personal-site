@@ -11,6 +11,10 @@ export default async function handler(req, res) {
     "public, max-age=86400, stale-while-revalidate=3600"
   );
 
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   const { data, error } = await supabase
     .from("portfolio")
     .select("slug,description,image,type");
