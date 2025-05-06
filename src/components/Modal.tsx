@@ -40,7 +40,7 @@ const Modal = ({
             aria-label="Close"
             data-overlay="#extra-large-modal"
             onClick={onClose}
-          >components
+          >
             <span className="icon-[tabler--x] size-4"></span>
           </button>
         </div>
@@ -122,8 +122,6 @@ const ModalSkeleton = ({ slug, onClose }: ModalSkeletonProps) => (
   </div>
 );
 
-// ADD: do some sort of api request for the modal content through portfolio-content.js
-// the api has to call with portfolio-content and with a ?slug={slug} at the end
 export default function ModalRoute() {
   const [data, setData] = useState<ModalProps | null>(null);
   const [loading, setLoading] = useState(true);
@@ -134,7 +132,17 @@ export default function ModalRoute() {
   const slug = location.pathname.split("/")[2];
 
   const closeModal = () => {
-    navigate(-1);
+    // check if the last domain was from current domain or other
+    const referrer = document.referrer;
+    const isSameOrigin =
+      referrer && new URL(referrer).origin === window.location.origin;
+
+    // if from current domain, send back 1 page. If not, send to origin url directory
+    if (isSameOrigin) {
+      navigate(-1);
+    } else {
+      navigate("/portfolio");
+    }
   };
 
   useEffect(() => {
@@ -173,7 +181,7 @@ export default function ModalRoute() {
   return data ? (
     <Modal
       onClose={closeModal}
-      created_at={data?.created_at ? new Date(data.created_at) : new Date()}
+      created_at={data?.created_at ? new Date(data.created_at) : undefined}
       slug={slug}
       content={data?.content}
       link_github={data?.link_github}

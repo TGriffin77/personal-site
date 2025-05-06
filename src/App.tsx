@@ -56,14 +56,12 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route
               path="*"
-              element={<p className="h-screen text-4xl">404 Page not found.</p>}
+              element={<p className="h-screen text-4xl"></p>}
             />
           </Routes>
-          {backgroundLocation && (
-            <Routes>
-              <Route path="/portfolio/:slug" element={<ModalRoute />} />
-            </Routes>
-          )}
+          <Routes>
+            <Route path="/portfolio/:slug" element={<ModalRoute />} />
+          </Routes>
         </Suspense>
         <Footer />
       </ObserverProvider>
